@@ -87,7 +87,7 @@ services:
       - DB_POSTGRESDB_PASSWORD=adminpass
       - GENERIC_TIMEZONE=Asia/Kolkata
       - TZ=Asia/Kolkata
-      - WEBHOOK_URL=http://n8n-workflow:5678
+      - WEBHOOK_URL=http://localhost:5678
       - N8N_SECURE_COOKIE=false
     volumes:
       - n8n-workflow:/home/node/.n8n
