@@ -177,10 +177,10 @@ docker compose up -d
 
 ## 🔐 Step 6 — Login
 
-Password:
+Password for Evolution Manager:
 
 ```
-Tirtha@2026
+evo@12345
 ```
 
 ---
@@ -201,27 +201,3 @@ Tirtha@2026
 
 * First startup may take **20–40 seconds**
 * If QR doesn’t appear → refresh or wait
-* If DB error occurs → restart stack:
-
-```bash
-docker compose restart
-```
-
----
-
-## ✅ Result
-
-You now have:
-
-* Shared PostgreSQL (2 databases auto-created)
-* n8n automation system
-* Evolution API (WhatsApp integration)
-* Redis caching layer
-* Fully Dockerized setup
-
-# ⚡ Quick Links
-
-| Service                  | URL                                                            |
-| ------------------------ | -------------------------------------------------------------- |
-| n8n UI                   | [http://localhost:5678](http://localhost:5678)                 |
-| Evolution Manager        | [http://localhost:8080/manager](http://localhost:8080/manager) |
