@@ -61,7 +61,6 @@ services:
       POSTGRES_PASSWORD: adminpass
     volumes:
       - postgres-db:/var/lib/postgresql/data
-      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
     networks:
       - app-net
 
@@ -151,30 +150,12 @@ volumes:
 
 ---
 
-## 📄 Step 3 — Create `init-db.sh`
+## 📄 Step 3 — Create initial databases
 
-Create a file:
-
-```bash
-init-db.sh
-```
-
-Paste:
-
-```
-#!/bin/bash
-set -e
-
-psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
-    CREATE DATABASE n8n;
-    CREATE DATABASE evolution;
-EOSQL
-```
-
-Make it executable:
+Create databases
 
 ```bash
-chmod +x init-db.sh
+docker exec -it postgres-db psql -U admin -c "CREATE DATABASE n8n;" -c "CREATE DATABASE evolution;"
 ```
 
 ---
